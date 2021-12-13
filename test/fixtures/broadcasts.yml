@@ -1,0 +1,18 @@
+# == Schema Information
+#
+# Table name: broadcasts
+#
+#  id         :integer          not null, primary key
+#  date       :date
+#  number     :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+one:
+  date: 2021-12-12
+  number: 1
+
+two:
+  date: 2021-12-12
+  number: 1

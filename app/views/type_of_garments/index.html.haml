@@ -1,0 +1,23 @@
+%h1 Listing type_of_garments
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Description
+      %th
+      %th
+      %th
+
+  %tbody
+    - @type_of_garments.each do |type_of_garment|
+      %tr
+        %td= type_of_garment.name
+        %td= type_of_garment.description
+        %td= link_to 'Show', type_of_garment
+        %td= link_to 'Edit', edit_type_of_garment_path(type_of_garment)
+        %td= link_to 'Destroy', type_of_garment, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Type of garment', new_type_of_garment_path

@@ -1,0 +1,24 @@
+-# frozen_string_literal: true
+= simple_form_for(@broadcast) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  #form-inputs.form-group
+    .dates
+      = f.input :date, input_html: { class: 'datepicker' }
+    = f.input :number, input_html: { class: 'form-control' }
+    .broadcast
+      = f.select(:host_id, Broadcast.all.pluck(:number, :id) , { :include_blank => true, :selected => nil})
+    .host
+      = f.select(:host_id, Host.all.pluck(:first_name, :id) , { :include_blank => true, :selected => nil})
+    #addParticipants
+      = link_to_add_association f, :garment_host_broadcasts, 'data-association-insertion-node' => '.participants .participants-container', 'data-turbolinks' => false do
+        agregar participante
+    .participants
+      = f.simple_fields_for :garment_host_broadcasts do |g|
+        = render 'garment_host_broadcastsfields', f: g
+      .participants-container
+
+
+  .form-actions
+    = f.button :submit

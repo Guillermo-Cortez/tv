@@ -1,0 +1,2 @@
+.nested-fields
+    = f.input :id, as: :select, collection: Host.all.pluck(:first_name,:id)

@@ -1,0 +1,22 @@
+---
+es:
+  broadcast: Session
+  errors:
+    messages:
+      not_saved: No se guardo
+  garments: Prendas
+  hello: Hello world
+  host: Locutor
+  middle: Intermedia
+  sign_out: Cerrar session
+  type: Tipo de prenda
+  activerecord:
+    models:
+      category:
+        one: Categoria
+        others: Categorías
+      host:
+        one: Conductor
+        others: Conductores
+  common:
+    back: Atrás

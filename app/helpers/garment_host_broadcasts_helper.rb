@@ -1,0 +1,2 @@
+module GarmentHostBroadcastsHelper
+end

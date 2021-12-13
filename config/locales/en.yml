@@ -1,0 +1,12 @@
+---
+en:
+  broadcast: Broadcast
+  errors:
+    messages:
+      not_saved: Not saved
+  garments: Garments
+  hello: Hello world
+  host: Host
+  middle: Middle
+  sign_out: Sign out
+  type: Type

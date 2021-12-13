@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Host:
+  = @garment_host_broadcast.host
+%p
+  %b Garment:
+  = @garment_host_broadcast.garment
+%p
+  %b Broadcast:
+  = @garment_host_broadcast.broadcast
+
+= link_to 'Edit', edit_garment_host_broadcast_path(@garment_host_broadcast)
+\|
+= link_to 'Back', garment_host_broadcasts_path

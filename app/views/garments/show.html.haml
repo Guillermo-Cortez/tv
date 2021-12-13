@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Description:
+  = @garment.description
+%p
+  %b Colour:
+  = @garment.colour
+%p
+  %b Typeofgarment:
+  = @garment.typeOfGarment
+%p
+  %b Brand:
+  = @garment.brand
+
+= link_to 'Edit', edit_garment_path(@garment)
+\|
+= link_to 'Back', garments_path

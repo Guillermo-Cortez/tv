@@ -1,0 +1,2 @@
+.nested-fields
+      = f.input :garment_id, as: :select, collection: Garment.all.pluck(:description,:id)

@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b First name:
+  = @host.first_name
+%p
+  %b Last name:
+  = @host.last_name
+%p
+  %b Sex:
+  = @host.sex
+%p
+  %b Age:
+  = @host.age
+
+= link_to 'Edit', edit_host_path(@host)
+\|
+= link_to 'Back', hosts_path

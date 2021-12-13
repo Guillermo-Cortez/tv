@@ -1,0 +1,27 @@
+%h1 Listing garments
+
+%table
+  %thead
+    %tr
+      %th Description
+      %th Colour
+      %th Typeofgarment
+      %th Brand
+      %th
+      %th
+      %th
+
+  %tbody
+    - @garments.each do |garment|
+      %tr
+        %td= garment.description
+        %td= garment.colour
+        %td= garment.typeOfGarment
+        %td= garment.brand
+        %td= link_to 'Show', garment
+        %td= link_to 'Edit', edit_garment_path(garment)
+        %td= link_to 'Destroy', garment, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Garment', new_garment_path

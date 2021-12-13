@@ -1,0 +1,17 @@
+-# frozen_string_literal: true
+= simple_form_for(@garment_host_broadcast) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  .form-inputs
+    = f.input :broadcast_id, as: :select, collection: Broadcast.all.pluck(:number,:id)
+    = f.input :host_id, as: :select, collection: Host.all.pluck(:first_name,:id)
+    #addParticipants
+      = link_to_add_association f, :garment, 'data-association-insertion-node' => '.participants .participants-container', 'data-turbolinks' => false do
+        Agregar ropa
+    .participants
+      = f.simple_fields_for :garment do |g|
+        = render 'garment_fields', f: g
+      .participants-container
+  .form-actions
+    = f.button :submit

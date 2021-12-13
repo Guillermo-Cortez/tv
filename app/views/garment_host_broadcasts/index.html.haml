@@ -1,0 +1,26 @@
+%h3 Listing garment_host_broadcasts
+
+= button_tag 'Submit', type: 'submit', class: "btn btn-primary"
+%table{:class => "table table-striped"}
+  %thead
+    %tr
+      %th Host
+      %th Garment
+      %th Broadcast
+      %th
+      %th
+      %th
+
+  %tbody
+    - @garment_host_broadcasts.each do |garment_host_broadcast|
+      %tr
+        %td= garment_host_broadcast.host
+        %td= garment_host_broadcast.garment
+        %td= garment_host_broadcast.broadcast
+        %td= link_to 'Show', garment_host_broadcast, class: 'btn btn-warning '
+        %td= link_to 'Edit', edit_garment_host_broadcast_path(garment_host_broadcast)
+        %td= link_to 'Destroy', garment_host_broadcast, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Garment host broadcast', new_garment_host_broadcast_path
